@@ -1,0 +1,23 @@
+
+GIT LARGE FILE SUPPORT
+----------------------
+ - Download git lfs
+ - in git bash, run:
+	>git lfs install
+
+Add the files:
+- .gitignore
+- .gitattributes
+
+Redigera filen config (inne i git-mappen) och lägg till:
+-----------------------------------------------------------
+[merge]
+	tool = unityyamlmerge
+
+[merge "unityyamlmerge"]
+	keepTemporaries = true
+	keepBackup = false
+	path = 'C:\\Program Files\\Unity\\2019.3.15f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe'
+	cmd = 'C:\\Program Files\\Unity\\2019.3.15f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe' merge -p $BASE $REMOTE $LOCAL $MERGED
+	trustExitCode = false
+-----------------------------------------------------------
