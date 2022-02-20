@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VictoryCondition : MonoBehaviour
+public class VictoryConditionCheck : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {

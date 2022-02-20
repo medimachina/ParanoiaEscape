@@ -4,7 +4,7 @@ using UnityEngine;
 using com.ootii.Messages;
 using System;
 
-public class DetectLoss : MonoBehaviour
+public class GameOverConditionListener : MonoBehaviour
 {
     
     void OnEnable()
@@ -20,7 +20,7 @@ public class DetectLoss : MonoBehaviour
 
     private void DebugWonGame(IMessage rMessage)
     {
-        Debug.Log($"You escaped the asylum game!");
+        Debug.Log($"You escaped the asylum!");
     }
 
     void OnDisable()
