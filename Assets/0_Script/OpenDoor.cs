@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
@@ -22,19 +20,13 @@ public class OpenDoor : MonoBehaviour
 
     void Update()
     {
-        if (!doorAnimationActive && Input.GetKeyDown(KeyCode.E))
-        {
-            doorAnimationActive = true;
-            _isDoorOpen = !_isDoorOpen;
-            _currentProgress = 0;
-        }
         if (doorAnimationActive == true)
         {
-            SetDoorState();
+            UpdateDoorPos();
         }
     }
 
-    void SetDoorState()
+    void UpdateDoorPos()
     {
         _currentProgress += AnimationSpeed;
         float doorCurrentX = doorTransform.localPosition.x;
@@ -52,6 +44,15 @@ public class OpenDoor : MonoBehaviour
         else if (!_isDoorOpen && (doorCurrentX >= closedState.x))
         {
             doorAnimationActive = false;
+        }
+    }
+
+    public void ToggleDoor()
+    {
+        if (!doorAnimationActive) {
+            doorAnimationActive = true;
+            _isDoorOpen = !_isDoorOpen;
+            _currentProgress = 0;
         }
     }
 }

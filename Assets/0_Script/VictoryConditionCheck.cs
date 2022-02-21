@@ -7,10 +7,8 @@ public class VictoryConditionCheck : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision with door detected with object: " + collision.gameObject.tag); 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Victory");
             MessageDispatcher.SendMessage(Msg.WonGame);
         }
     }
