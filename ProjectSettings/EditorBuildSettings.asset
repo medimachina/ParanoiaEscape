@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/0_Scenes/PerWorkingScene.unity
+    guid: b44750e7d55d8ad40a3b83023f9464a8
+  - enabled: 1
+    path: Assets/0_Scenes/RasmusWorkingScene.unity
+    guid: e8fe7ae8230026b4aace5473ecf37fd7
   m_configObjects: {}

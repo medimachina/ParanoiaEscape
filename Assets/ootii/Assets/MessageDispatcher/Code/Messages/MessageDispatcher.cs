@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -709,6 +710,11 @@ namespace com.ootii.Messages
             }
 
             mListenerAdds.Clear();
+        }
+
+        public static void AddListener(object onGameWon)
+        {
+            throw new NotImplementedException();
         }
     }
 
