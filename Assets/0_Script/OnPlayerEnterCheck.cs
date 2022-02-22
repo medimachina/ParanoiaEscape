@@ -42,6 +42,7 @@ public class OnPlayerEnterCheck : MonoBehaviour
                 _enemiesInsideTrigger.Add(other);
             }
 
+            Debug.Log($"Checking for enemy on enter. Count: {_enemiesInsideTrigger.Count}, EnemyIsNear: {EnemyIsNear}");
             CheckIfToggleForEnemy();
         }
     }
@@ -59,7 +60,7 @@ public class OnPlayerEnterCheck : MonoBehaviour
                 _enemiesInsideTrigger.Remove(other);
             }
 
-            Debug.Log($"Checking for enemy on exit. Count: {_enemiesInsideTrigger.Count}");
+            Debug.Log($"Checking for enemy on exit. Count: {_enemiesInsideTrigger.Count}, EnemyIsNear: {EnemyIsNear}");
             CheckIfToggleForEnemy();
         }
     }
@@ -68,6 +69,7 @@ public class OnPlayerEnterCheck : MonoBehaviour
     {
         if (EnemyIsNear != _enemyWasNerLastFrame)
         {
+            _enemyWasNerLastFrame = EnemyIsNear;
             ToggleForEnemy();
         }
     }
@@ -76,10 +78,12 @@ public class OnPlayerEnterCheck : MonoBehaviour
     {
         if (EnemyIsNear)
         {
+            Debug.Log("Force open");
             openDoor.ForceOpen();
         }
         else
         {
+            Debug.Log("Close");
             openDoor.Close();
         }
     }

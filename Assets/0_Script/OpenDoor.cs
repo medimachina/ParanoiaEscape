@@ -33,7 +33,8 @@ public class OpenDoor : MonoBehaviour
         if (_isDoorOpen && (doorCurrentX > openState.x))
         {
             doorTransform.localPosition = Vector3.Lerp(closedState, openState, speedCurve.Evaluate(_currentProgress));
-        } else if (_isDoorOpen && (doorCurrentX <= openState.x))
+        }
+        else if (_isDoorOpen && (doorCurrentX <= openState.x))
         {
             doorAnimationActive = false;
         }
@@ -49,7 +50,8 @@ public class OpenDoor : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if (!doorAnimationActive) {
+        if (!doorAnimationActive)
+        {
             doorAnimationActive = true;
             _isDoorOpen = !_isDoorOpen;
             _currentProgress = 0;
@@ -58,9 +60,16 @@ public class OpenDoor : MonoBehaviour
 
     public void ForceOpen()
     {
-        if (_isDoorOpen == false && doorAnimationActive)
+        if (doorAnimationActive)
         {
-            _currentProgress = 1 - _currentProgress;
+            if (_isDoorOpen == false)
+            {
+                _currentProgress = 1 - _currentProgress;
+            }
+        }
+        else
+        {
+            _currentProgress = 0;
         }
 
         doorAnimationActive = true;
@@ -69,9 +78,16 @@ public class OpenDoor : MonoBehaviour
 
     public void Close()
     {
-        if (_isDoorOpen == true && doorAnimationActive)
+        if (doorAnimationActive)
         {
-            _currentProgress = 1 - _currentProgress;
+            if (_isDoorOpen == true)
+            {
+                _currentProgress = 1 - _currentProgress;
+            }
+        }
+        else
+        {
+            _currentProgress = 0;
         }
 
         doorAnimationActive = true;
