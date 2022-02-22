@@ -711,11 +711,6 @@ namespace com.ootii.Messages
 
             mListenerAdds.Clear();
         }
-
-        public static void AddListener(object onGameWon)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     /// <summary>

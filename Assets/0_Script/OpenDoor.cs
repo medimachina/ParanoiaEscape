@@ -55,4 +55,26 @@ public class OpenDoor : MonoBehaviour
             _currentProgress = 0;
         }
     }
+
+    public void ForceOpen()
+    {
+        if (_isDoorOpen == false && doorAnimationActive)
+        {
+            _currentProgress = 1 - _currentProgress;
+        }
+
+        doorAnimationActive = true;
+        _isDoorOpen = true;
+    }
+
+    public void Close()
+    {
+        if (_isDoorOpen == true && doorAnimationActive)
+        {
+            _currentProgress = 1 - _currentProgress;
+        }
+
+        doorAnimationActive = true;
+        _isDoorOpen = false;
+    }
 }
