@@ -22,7 +22,7 @@ public class SelectNextWaypoint : Action
 
     public override void OnAwake()
     {
-        Debug.Log($"Running OnAwake(). CurrentWaypointIndex => {CurrentWaypointIndex.Value}");
+        //Debug.Log($"Running OnAwake(). CurrentWaypointIndex => {CurrentWaypointIndex.Value}");
         CurrentWaypointIndex.Value = 0;
         FillWaypointList();
     }
@@ -38,7 +38,7 @@ public class SelectNextWaypoint : Action
 
         _currentWaypoint = _waypointTransforms[CurrentWaypointIndex.Value];
 
-        Debug.Log($"Current waypoint => {_currentWaypoint.name}");
+        //Debug.Log($"Current waypoint => {_currentWaypoint.name}");
 
         if (_currentWaypoint != null)
         {
