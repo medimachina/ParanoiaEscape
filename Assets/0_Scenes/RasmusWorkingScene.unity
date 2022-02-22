@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 855679940108893896, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.72
+      value: 8.75
       objectReference: {fileID: 0}
     - target: {fileID: 855679940108893896, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -837,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 855679940108893896, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.62
+      value: 5.45
       objectReference: {fileID: 0}
     - target: {fileID: 855679940108893896, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -867,13 +867,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7646149642612604669, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646149642612604669, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 9077553918549743611, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_Name
       value: GuardContainer (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9077553918549743611, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b6a54920c98f944bfe7f4b5fef0bb2, type: 3}
@@ -934,55 +942,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
---- !u!1 &436492625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 436492624}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &436492626 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 493362631385555227, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 436492624}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &436492627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436492625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bc73bce01d0da4a914e4806bba38c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorTransform: {fileID: 436492626}
-  AnimationSpeed: 0.005
-  OpenAmount: 2.4
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &436492629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3029587650326304999, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
@@ -1045,55 +1004,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
---- !u!1 &452761674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 452761673}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &452761675 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 493362631385555227, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 452761673}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &452761676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452761674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bc73bce01d0da4a914e4806bba38c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorTransform: {fileID: 452761675}
-  AnimationSpeed: 0.005
-  OpenAmount: 2.4
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &452761678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3029587650326304999, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
@@ -1156,55 +1066,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
---- !u!1 &479624991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 479624990}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &479624992 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 493362631385555227, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-  m_PrefabInstance: {fileID: 479624990}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &479624993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479624991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bc73bce01d0da4a914e4806bba38c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorTransform: {fileID: 479624992}
-  AnimationSpeed: 0.005
-  OpenAmount: 2.4
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &479624995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3029587650326304999, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
