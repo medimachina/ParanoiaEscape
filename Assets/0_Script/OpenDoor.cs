@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OpenDoor : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class OpenDoor : MonoBehaviour
     public float AnimationSpeed = 0.002f;
     public float OpenAmount = 2;
     public AnimationCurve speedCurve;
+    public StringEvent doorOpened;
+    public StringEvent doorClosed;
     private bool _isDoorOpen = false;
     private Vector3 closedState;
     private Vector3 openState;
@@ -52,6 +55,14 @@ public class OpenDoor : MonoBehaviour
     {
         if (!doorAnimationActive)
         {
+            if (_isDoorOpen)
+            {
+                doorClosed.Invoke("");
+            }
+            else 
+            { 
+                doorOpened.Invoke(""); 
+            }
             doorAnimationActive = true;
             _isDoorOpen = !_isDoorOpen;
             _currentProgress = 0;
