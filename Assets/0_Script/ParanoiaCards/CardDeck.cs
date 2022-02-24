@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
+[System.Serializable]
 public class CardDeck
 {
+    [SerializeField]
     private List<Card> _cardList;
 
     public List<Card> CardList
@@ -29,6 +33,13 @@ public class CardDeck
     {
         List<Card> mergedCards = new List<Card>(a.CardList);
         mergedCards.AddRange(b.CardList);
+        return new CardDeck(mergedCards);
+    }
+
+    public static CardDeck operator +(CardDeck a, Card b)
+    {
+        List<Card> mergedCards = new List<Card>(a.CardList);
+        mergedCards.Add(b);
         return new CardDeck(mergedCards);
     }
 
@@ -87,7 +98,7 @@ public class CardDeck
 
         for (int i = a.CardList.Count - 1; i >= 0; i--)
         {
-            if (b == cardsLeft[i])
+            if (b.Identifier == cardsLeft[i].Identifier)
             {
                 cardsLeft.RemoveAt(i);
                 break;
@@ -112,28 +123,18 @@ public class CardDeck
         return new CardDeck(resultingList);
     }
 
-    /*
-        public static Fraction operator +(Fraction a) => a;
-        public static Fraction operator -(Fraction a) => new Fraction(-a.num, a.den);
+    public override string ToString()
+    {
+        string temp = "(";
 
-        public static Fraction operator +(Fraction a, Fraction b)
-            => new Fraction(a.num * b.den + b.num * a.den, a.den * b.den);
-
-        public static Fraction operator -(Fraction a, Fraction b)
-            => a + (-b);
-
-        public static Fraction operator *(Fraction a, Fraction b)
-            => new Fraction(a.num * b.num, a.den * b.den);
-
-        public static Fraction operator /(Fraction a, Fraction b)
+        foreach (Card card in _cardList)
         {
-            if (b.num == 0)
-            {
-                throw new DivideByZeroException();
-            }
-            return new Fraction(a.num * b.den, a.den * b.num);
+            temp += card.ToString() + ", ";
         }
-        
-   */
+
+        temp += ")";
+        return temp;
+        //return "(" + String.Join(", ", _cardList) + ")";
+    }
 
 }
