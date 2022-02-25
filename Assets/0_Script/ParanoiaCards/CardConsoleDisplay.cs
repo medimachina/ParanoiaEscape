@@ -12,6 +12,38 @@ public class CardConsoleDisplay : SerializedMonoBehaviour
     public Card cardX;
     public int multiplier;
 
+    private void DebugList(List<Card> list)
+    {
+        string output = "";
+        foreach (Card card in list)
+        {
+            output += card.Identifier + ", ";
+        }
+
+        Debug.Log(output);
+    }
+
+    [Button("Debug A")]
+    public void DebugListA()
+    {
+        DebugList(_cardListA);
+    }
+    [Button("Debug B")]
+    public void DebugListB()
+    {
+        DebugList(_cardListA);
+    }
+    [Button("Debug X")]
+    public void DebugCardX()
+    {
+        Debug.Log(cardX.Identifier);
+    }
+    [Button("Debug X type")]
+    public void DebugCardXType()
+    {
+        Debug.Log(cardX.GetType());
+    }
+
     void Start()
     {
         CardDeck deckA = new CardDeck(_cardListA);

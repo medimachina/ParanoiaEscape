@@ -33,7 +33,7 @@ public class CardDeck
 
         foreach (Card card in inputList)
         {
-            copiedList.Add(card.NewOfSameType());
+            copiedList.Add(card.NewInstance());
         }
 
         return copiedList;
@@ -49,7 +49,7 @@ public class CardDeck
     public static CardDeck operator +(CardDeck a, Card b)
     {
         List<Card> mergedCards = ShallowCopyList(a.CardList);
-        mergedCards.Add(b.NewOfSameType());
+        mergedCards.Add(b.NewInstance());
         return new CardDeck(mergedCards);
     }
 
