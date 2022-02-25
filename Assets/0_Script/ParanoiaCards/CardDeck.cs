@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
+using System.Linq;
 
 [System.Serializable]
 public class CardDeck
@@ -29,17 +27,29 @@ public class CardDeck
         _cardList = new List<Card>(cards);
     }
 
+    private static List<Card>  ShallowCopyList(List<Card> inputList)
+    {
+        List<Card> copiedList = new List<Card>();
+
+        foreach (Card card in inputList)
+        {
+            copiedList.Add(card.NewOfSameType());
+        }
+
+        return copiedList;
+    }
+
     public static CardDeck operator +(CardDeck a, CardDeck b)
     {
-        List<Card> mergedCards = new List<Card>(a.CardList);
-        mergedCards.AddRange(b.CardList);
+        List<Card> mergedCards = ShallowCopyList(a.CardList);
+        mergedCards.AddRange(ShallowCopyList(b.CardList));
         return new CardDeck(mergedCards);
     }
 
     public static CardDeck operator +(CardDeck a, Card b)
     {
-        List<Card> mergedCards = new List<Card>(a.CardList);
-        mergedCards.Add(b);
+        List<Card> mergedCards = ShallowCopyList(a.CardList);
+        mergedCards.Add(b.NewOfSameType());
         return new CardDeck(mergedCards);
     }
 
@@ -64,7 +74,7 @@ public class CardDeck
 
     public static CardDeck operator -(CardDeck a, CardDeck b)
     {
-        List<Card> cardsLeft = new List<Card>(a.CardList);
+        List<Card> cardsLeft = ShallowCopyList(a.CardList);
         Dictionary<string, List<int>> idToIndex = a.GetIdToCardIndexedDict();
         List<int> indicesToRemove = new List<int>();
 
@@ -94,7 +104,7 @@ public class CardDeck
 
     public static CardDeck operator -(CardDeck a, Card b)
     {
-        List<Card> cardsLeft = new List<Card>(a.CardList);
+        List<Card> cardsLeft = ShallowCopyList(a.CardList);
 
         for (int i = a.CardList.Count - 1; i >= 0; i--)
         {
@@ -114,10 +124,7 @@ public class CardDeck
         
         for (int i = 0; i < b; i++)
         {
-            foreach (Card card in a.CardList)
-            {
-                resultingList.Add(card);
-            }
+            resultingList.AddRange(ShallowCopyList(a.CardList));
         }
 
         return new CardDeck(resultingList);
@@ -134,7 +141,61 @@ public class CardDeck
 
         temp += ")";
         return temp;
-        //return "(" + String.Join(", ", _cardList) + ")";
+    }
+
+    public CardDeck Shuffle()
+    {
+        return new CardDeck(_cardList.OrderBy(a => UnityEngine.Random.Range(0.0f,1.0f)).ToList());
+    }
+
+    public Card DrawCard()
+    {
+        if (_cardList.Count == 0)
+        {
+            return null;
+        }
+        
+        Card drawnCard = _cardList[0];
+        _cardList.RemoveAt(0);
+
+        return drawnCard;
+    }
+
+    public CardDeck DrawCards(int amount)
+    {
+        if (_cardList.Count < amount)
+        {
+            return null;
+        }
+
+        List<Card> drawnCards = new List<Card>();
+
+        for (int i = amount - 1; i >= 0; i--)
+        {
+            drawnCards.Add(_cardList[i]);
+            _cardList.RemoveAt(i);
+        }
+
+        drawnCards.Reverse();
+
+        return new CardDeck(drawnCards);
+    }
+
+    public CardDeck RemoveAllCardsOfType<T>() where T : Card
+    {
+        Debug.Log(typeof(T));
+
+        List<Card> result = ShallowCopyList(_cardList);
+
+        for (int i = result.Count - 1; i >= 0; i--)
+        {
+            if (result[i] is T)
+            {
+                result.RemoveAt(i);
+            }
+        }
+
+        return new CardDeck(result);
     }
 
 }

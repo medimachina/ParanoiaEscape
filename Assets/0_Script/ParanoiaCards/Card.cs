@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- [System.Serializable]
-public abstract class Card
+[System.Serializable]
+public class Card
 {
     [SerializeField]
     protected string _identifier;
@@ -14,9 +14,31 @@ public abstract class Card
     public string Name => _name;
     public string Description => _description;
 
+    public Card()
+    {
+        _identifier = "base";
+        _name = "Base Card";
+        _description = "This is the base class and it should not be used.";
+    }
+
+    public Card(Card other)
+    {
+        _identifier = other.Identifier;
+        _name = other.Name;
+        _description = other.Description;
+    }
+
     public override string ToString()
     {
         return _identifier;
+    }
+}
+public static class CardExtensions
+{
+    public static T NewOfSameType<T>(this T other) where T : Card
+    {
+        Card copy = new Card(other);
+        return copy as T;
     }
 }
 

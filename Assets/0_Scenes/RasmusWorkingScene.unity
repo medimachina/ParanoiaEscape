@@ -1136,13 +1136,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f517a11d1ee76489d48e752020a1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckA:
-    _cardList: []
-  deckB:
-    _cardList: []
-  cardX:
-    _identifier: 
-  multiplier: 0
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _cardListA
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 1|CantWalkGreenCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_green
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|CantWalkRedCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_red
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|CantWalkBlueCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_blue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|CantWalkBlueCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_blue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _cardListB
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 6|CantWalkGreenCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_green
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|CantWalkGreenCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_green
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|CantWalkBlueCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_blue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cardX
+      Entry: 7
+      Data: 9|CantWalkBlueCard, Assembly-CSharp
+    - Name: _identifier
+      Entry: 1
+      Data: cant_walk_blue
+    - Name: 
+      Entry: 8
+      Data: 
+  multiplier: 3
 --- !u!4 &653655993
 Transform:
   m_ObjectHideFlags: 0
