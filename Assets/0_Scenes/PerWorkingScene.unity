@@ -5543,6 +5543,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 981845171, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 981845171, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1585788371}
@@ -9541,6 +9545,7 @@ MonoBehaviour:
   _clipList:
   - key: Walk
     clip: {fileID: 8300000, guid: 2e51b68682d021043981473fb21fc312, type: 3}
+  AUDIBLE_DISTANCE: 16
 --- !u!82 &1585788375
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12691,10 +12696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 981845171, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
-      propertyPath: playerObject
-      value: 
-      objectReference: {fileID: 1585788371}
     - target: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
       propertyPath: m_Name
       value: Doorway (10)
