@@ -5542,6 +5542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 981845171, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1585788371}
     - target: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
       propertyPath: m_Name
       value: Doorway (11)
@@ -12687,6 +12691,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 981845171, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1585788371}
     - target: {fileID: 1873863247947334061, guid: 84828ea041272ef4e928a8c74e003826, type: 3}
       propertyPath: m_Name
       value: Doorway (10)

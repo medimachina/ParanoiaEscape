@@ -184,7 +184,37 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  doorOpened:
+  openDoorAudioPlayerProximity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1118674622}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClipPlayerProximity
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+  closeDoorAudioPlayerProximity:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1118674622}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClipPlayerProximity
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+  openDoorAudio:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1118674622}
@@ -199,7 +229,7 @@ MonoBehaviour:
           m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
-  doorClosed:
+  closeDoorAudio:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1118674622}
@@ -229,9 +259,9 @@ MonoBehaviour:
   _source: {fileID: 1606763386}
   _clipList:
   - key: Open
-    clip: {fileID: 8300000, guid: 9f9a7b2f1cb291c459ff1f5fd4f6fc42, type: 3}
+    clip: {fileID: 8300000, guid: 24cfa7f6d2b226d4dac14b53e6448a99, type: 3}
   - key: Close
-    clip: {fileID: 8300000, guid: 17eb54034cb676d4286e7589865f622d, type: 3}
+    clip: {fileID: 8300000, guid: 94c6d9bc310c02148809feb1be4980c1, type: 3}
 --- !u!1 &2395485431266017755
 GameObject:
   m_ObjectHideFlags: 0
