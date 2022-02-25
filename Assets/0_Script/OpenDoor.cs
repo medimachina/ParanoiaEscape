@@ -7,8 +7,10 @@ public class OpenDoor : MonoBehaviour
     public float AnimationSpeed = 0.002f;
     public float OpenAmount = 2;
     public AnimationCurve speedCurve;
-    public StringEvent doorOpened;
-    public StringEvent doorClosed;
+    public StringEvent openDoorAudioPlayerProximity;
+    public StringEvent closeDoorAudioPlayerProximity;
+    public StringEvent openDoorAudio;
+    public StringEvent closeDoorAudio;
     private bool _isDoorOpen = false;
     private Vector3 closedState;
     private Vector3 openState;
@@ -57,11 +59,11 @@ public class OpenDoor : MonoBehaviour
         {
             if (_isDoorOpen)
             {
-                doorClosed.Invoke("");
+                closeDoorAudio.Invoke("");
             }
             else 
-            { 
-                doorOpened.Invoke(""); 
+            {
+                openDoorAudio.Invoke(""); 
             }
             doorAnimationActive = true;
             _isDoorOpen = !_isDoorOpen;
@@ -81,6 +83,7 @@ public class OpenDoor : MonoBehaviour
         else
         {
             _currentProgress = 0;
+            openDoorAudioPlayerProximity.Invoke("");
         }
 
         doorAnimationActive = true;
@@ -99,6 +102,7 @@ public class OpenDoor : MonoBehaviour
         else
         {
             _currentProgress = 0;
+            closeDoorAudioPlayerProximity.Invoke("");
         }
 
         doorAnimationActive = true;
