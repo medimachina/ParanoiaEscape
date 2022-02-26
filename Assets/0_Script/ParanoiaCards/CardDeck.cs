@@ -190,8 +190,6 @@ public class CardDeck
 
     public CardDeck RemoveAllCardsOfType<T>() where T : Card
     {
-        Debug.Log(typeof(T));
-
         List<Card> result = ShallowCopyList(_cardList);
 
         for (int i = result.Count - 1; i >= 0; i--)
