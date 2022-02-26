@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using com.ootii.Messages;
 using UnityEngine.Audio;
-using System;
 using Sirenix.OdinInspector;
-using DG.Tweening;
+using UnityEngine.SceneManagement;
+using System;
 
 public class MusicPlayer : SingletonBase<MusicPlayer>
 {
@@ -20,15 +19,21 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
 
     private List<AudioSourceController> _sourceControllers;
 
+    private Transform _mainCameraTransform;
+    private Transform _transformSelf;
+
     // Start is called before the first frame update
     void Start()
     {
+        _transformSelf = GetComponent<Transform>();
+
         _defaultPlayer = new AudioSourceController(this, gameObject.AddComponent<AudioSource>(), _defaultMusic, _mixerGroup);
 
         _actionPlayer = new AudioSourceController(this, gameObject.AddComponent<AudioSource>(), _actionLoopMusic, _mixerGroup);
         _actionPlayer.Intro = _actionStartMusic;
         _actionPlayer.FadeOutTime = 2;
         _menuPlayer = new AudioSourceController(this, gameObject.AddComponent<AudioSource>(), _menuMusic, _mixerGroup);
+        _actionPlayer.FadeInTime = 2;
 
         _sourceControllers = new List<AudioSourceController>();
         _sourceControllers.Add(_defaultPlayer);
@@ -36,23 +41,48 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
         _sourceControllers.Add(_menuPlayer);
     }
 
+    private void Update()
+    {
+        SetToCameraPosition();
+    }
+
+    private void SetToCameraPosition()
+    {
+        if (_mainCameraTransform != null)
+        {
+            _transformSelf.position = _mainCameraTransform.position;
+        }
+    }
+
     void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         MessageDispatcher.AddListener(Msg.AlarmStarted, OnAlarmStarted);
         MessageDispatcher.AddListener(Msg.AlarmStopped, OnAlarmStopped);
-        MessageDispatcher.AddListener(Msg.WonGame, OnLevelEnded);
-        MessageDispatcher.AddListener(Msg.LostGame, OnLevelEnded);
+        MessageDispatcher.AddListener(Msg.WonGame, PlayMenuMusic);
+        MessageDispatcher.AddListener(Msg.LostGame, PlayMenuMusic);
         MessageDispatcher.AddListener(Msg.LevelStarted, OnLevelStarted);
+        MessageDispatcher.AddListener(Msg.StartMenuMusic, PlayMenuMusic);
         Debug.Log($"Music: {name} Registering message {Msg.LevelStarted}");
 
     }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        _mainCameraTransform = Camera.main?.transform;
+    }
+
     private void OnDisable()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
         MessageDispatcher.RemoveListener(Msg.AlarmStarted, OnAlarmStarted);
         MessageDispatcher.RemoveListener(Msg.AlarmStopped, OnAlarmStopped);
-        MessageDispatcher.RemoveListener(Msg.WonGame, OnLevelEnded);
-        MessageDispatcher.RemoveListener(Msg.LostGame, OnLevelEnded);
+        MessageDispatcher.RemoveListener(Msg.WonGame, PlayMenuMusic);
+        MessageDispatcher.RemoveListener(Msg.LostGame, PlayMenuMusic);
         MessageDispatcher.RemoveListener(Msg.LevelStarted, OnLevelStarted);
+        MessageDispatcher.RemoveListener(Msg.StartMenuMusic, PlayMenuMusic);
         Debug.Log($"Music: {name} Unregistering message {Msg.LevelStarted}");
     }
 
@@ -64,7 +94,7 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
     }
 
     [Button("Level Ended")]
-    private void OnLevelEnded(IMessage rMessage)
+    private void PlayMenuMusic(IMessage rMessage)
     {
         FadeToPlayer(_menuPlayer);
     }
@@ -99,146 +129,4 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
 
     }
 
-}
-
-public class AudioSourceController
-{
-    public MonoBehaviour _parentBehavour;
-    public AudioClip MainClip;
-    public AudioClip Intro;
-    public AudioClip Outro;
-    public float FadeInTime = 1;
-    public float FadeOutTime = 1;
-    AudioSource _source;
-    Coroutine _waitingToEnd;
-    private bool _isPlaying = false;
-    private Tween currentTween;
-
-    public bool IsPlaying => _isPlaying;
-
-    public AudioSourceController(MonoBehaviour parentBehavour, AudioSource source, AudioClip mainClip, AudioMixerGroup mixerGroup)
-    {
-        _parentBehavour = parentBehavour;
-        _source = source;
-        _source.outputAudioMixerGroup = mixerGroup;
-        MainClip = mainClip;
-    }
-
-    public void PlayQueue(Queue<AudioClip> playQueue)
-    {
-        if (playQueue.Count == 0)
-        {
-            _isPlaying = false;
-            return;
-        }
-        else
-        {
-            _isPlaying = true;
-        }
-
-        _source.clip = playQueue.Dequeue();
-        _source.Play();
-
-        Debug.Log($"Music: Playing clip {_source.clip}. {playQueue.Count} left in queue");
-
-        if (_source.clip == MainClip && playQueue.Count == 0)
-        {
-            Debug.Log($"Music: {_source.clip} is main clip and playQueue count = {playQueue.Count} => Setting to loop");
-            _source.loop = true;
-            return;
-        }
-
-        if (playQueue.Count > 0)
-        {
-            Debug.Log($"Cout {playQueue.Count} > 0. Starting coroutine with playing next at end.");
-            _waitingToEnd = _parentBehavour.StartCoroutine(WaitForClipToEndCo(_source, () =>
-            {
-                PlayQueue(playQueue);
-            }));
-        }
-        else
-        {
-            Debug.Log($"Cout {playQueue.Count} == 0. Starting coroutine with setting _isPlaying to false at end.");
-            _waitingToEnd = _parentBehavour.StartCoroutine(WaitForClipToEndCo(_source, () =>
-            {
-                _isPlaying = false;
-            }));
-        }
-    }
-
-    public void Play()
-    {
-        if (!_isPlaying)
-        {
-            Queue<AudioClip> queue = GenerateQueue();
-            Debug.Log($"Music: Creating a queue with {queue.Count} tracks");
-            PlayQueue(queue);
-        }
-    }
-
-    private Queue<AudioClip> GenerateQueue()
-    {
-        Queue<AudioClip> queue = new Queue<AudioClip>();
-        EnqueIfExists(queue, Intro);
-        EnqueIfExists(queue, MainClip);
-        EnqueIfExists(queue, Outro);
-
-        return queue;
-    }
-
-    private void EnqueIfExists(Queue<AudioClip> queue, AudioClip clip)
-    {
-        if (clip != null)
-        {
-            queue.Enqueue(clip);
-        }
-    }
-
-    private void CleanUp()
-    {
-        if (_waitingToEnd != null)
-        {
-            _parentBehavour.StopCoroutine(_waitingToEnd);
-        }
-        if (currentTween != null)
-        {
-            currentTween.Kill();
-        }
-        _source.loop = false;
-        _source.Stop();
-    }
-
-    public void FadeOut()
-    {
-        CleanUp();
-
-        if (IsPlaying)
-        {
-            currentTween = _source.DOFade(0, FadeOutTime).OnComplete(() =>
-            {
-                _source.Stop();
-            });
-            _isPlaying = false;
-        }
-    }
-
-    public void FadeIn()
-    {
-        if (!IsPlaying)
-        {
-            CleanUp();
-            Play();
-            currentTween = _source.DOFade(1, 1);
-        }
-    }
-
-    IEnumerator WaitForClipToEndCo(AudioSource source, Action actionOnEnd)
-    {
-        while (source.isPlaying == true)
-        {
-            yield return 0;
-        }
-
-        actionOnEnd();
-    }
 }
