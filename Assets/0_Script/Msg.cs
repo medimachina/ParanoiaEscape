@@ -14,6 +14,8 @@
     private const string _restartGame = "RESTART_GAME";
     private const string _showFinishedLevelMenu = "SHOW_FINISHED_LEVEL_MENU";
     private const string _showFinishedGameMenu = "SHOW_FINISHED_GAME_MENU";
+    private const string _pauseGame = "PAUSE_GAME";
+    private const string _resumeGame = "RESUME_GAME";
 
 
     public static string LostGame => _lostGame;
@@ -30,5 +32,7 @@
     public static string FinishedGame => _finishedGame;
     public static string ShowFinishedLevelMenu => _showFinishedLevelMenu;
     public static string ShowFinishedGameMenu => _showFinishedGameMenu;
+    public static string PauseGame => _pauseGame;
+    public static string ResumeGame => _resumeGame;
 }
 

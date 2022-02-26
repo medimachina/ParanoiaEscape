@@ -39,6 +39,7 @@ public class UiPanel : MonoBehaviour
         {
             _canvasGroup.alpha = 0;
             _currentTween = _canvasGroup.DOFade(1, 1);
+            _button.Select();
         }
     }
 

@@ -24,7 +24,7 @@ public class Alarm : MonoBehaviour
 
     private void OnReportSeeingPlayer(IMessage rMessage)
     {
-        _timeOfLastReport = Time.time;
+        _timeOfLastReport = TimeMgr.UnpausedTime;
 
         if (!AlarmActive)
         {
@@ -34,7 +34,7 @@ public class Alarm : MonoBehaviour
 
     private void Update()
     {
-        if (AlarmActive && Time.time > _timeOfLastReport + _cooldownTime)
+        if (AlarmActive && TimeMgr.UnpausedTime > _timeOfLastReport + _cooldownTime)
         {
             DeactivateAlarm();
         }

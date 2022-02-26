@@ -17,6 +17,8 @@ public class GameController : SingletonBase<GameController>
 
     public int CurrentLevel => _currentLevel;
 
+    private Coroutine _loadingSceneNextFrame;
+
     public void OnEnable()
     {
         MessageDispatcher.AddListener(Msg.RestartLevel, RestartLevel);
@@ -24,6 +26,7 @@ public class GameController : SingletonBase<GameController>
         MessageDispatcher.AddListener(Msg.StartTutorial, StartTutorial);
         MessageDispatcher.AddListener(Msg.RestartGame, RestartGame);
         MessageDispatcher.AddListener(Msg.WonGame, OnLevelWon);
+        //MessageDispatcher.AddListener(Msg.LevelStarted, OnLevelStarted);
     }
 
     public void OnDisable()
@@ -33,28 +36,44 @@ public class GameController : SingletonBase<GameController>
         MessageDispatcher.RemoveListener(Msg.StartTutorial, StartTutorial);
         MessageDispatcher.RemoveListener(Msg.RestartGame, RestartGame);
         MessageDispatcher.RemoveListener(Msg.WonGame, OnLevelWon);
+        //MessageDispatcher.RemoveListener(Msg.LevelStarted, OnLevelStarted);
     }
 
     public void RestartLevel(IMessage rMessage)
     {
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        LoadSceneNextFrame(scene.name);
     }
 
     public void NextLevel(IMessage rMessage)
     {
-        SceneManager.LoadScene("GameLevel");
+        LoadSceneNextFrame("GameLevel");
     }
 
     private void StartTutorial(IMessage rMessage)
     {
-        SceneManager.LoadScene("Tutorial");
+        LoadSceneNextFrame("Tutorial");
     }
 
     private void RestartGame(IMessage rMessage)
     {
         ResetForNewGame();
-        SceneManager.LoadScene("GameLevel");
+        LoadSceneNextFrame("GameLevel");
+    }
+
+    private void LoadSceneNextFrame(string sceneName)
+    {
+        if (_loadingSceneNextFrame == null)
+        {
+            CleanupBeforeNext();
+            StartCoroutine(LoadSceneNextFrameCo(sceneName));
+        }
+    }
+
+    private IEnumerator LoadSceneNextFrameCo(string sceneName)
+    {
+        yield return 0;
+        SceneManager.LoadScene(sceneName);
     }
 
     private void OnLevelWon(IMessage rMessage)
@@ -69,6 +88,12 @@ public class GameController : SingletonBase<GameController>
             MessageDispatcher.SendMessage(Msg.ShowFinishedLevelMenu);
         }
     }
+
+    private void CleanupBeforeNext()
+    {
+        TimeMgr.Resume();
+    }
+
 
     private void ResetForNewGame()
     {
