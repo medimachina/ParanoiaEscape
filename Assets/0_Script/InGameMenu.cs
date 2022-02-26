@@ -55,6 +55,7 @@ public class InGameMenu : MonoBehaviour
 
     private void ActivatePanel(UiPanel panel)
     {
+        TimeMgr.Pause();
         HideAllPanels();
         panel.gameObject.SetActive(true);
         panel.Show();

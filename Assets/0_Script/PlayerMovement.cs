@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Transform Model;
     public StringEvent playerStartWalking;
     public UnityEvent playerStopWalking;
     public float speed = 0.2f;
@@ -20,10 +21,17 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (TimeMgr.Paused)
+        {
+            _rb.velocity = Vector3.zero;
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        var newVector = new Vector3(horizontal, 0f, vertical).normalized *  speed;
-        if (isMoving(newVector))
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        Vector3 velocity = direction * speed;
+        if (isMoving(velocity))
         {
             if (_startWalkingAudio)
             {
@@ -32,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
             }
             _startWalkingAudio = false;
 
-        } else
+        }
+        else
         {
             if (_stopWalkingAudio)
             {
@@ -41,8 +50,13 @@ public class PlayerMovement : MonoBehaviour
             _startWalkingAudio = true;
             _stopWalkingAudio = false;
         }
-        _rb.velocity = newVector;
+        _rb.velocity = velocity;
+        if (direction.magnitude != 0)
+        {
+            Model.forward = direction;
+        }
     }
+
 
     bool isMoving(Vector3 vector)
     {

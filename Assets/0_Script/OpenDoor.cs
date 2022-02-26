@@ -33,23 +33,26 @@ public class OpenDoor : MonoBehaviour
 
     void UpdateDoorPos()
     {
-        _currentProgress += AnimationSpeed;
-        float doorCurrentX = doorTransform.localPosition.x;
-        if (_isDoorOpen && (doorCurrentX > openState.x))
+        if (!TimeMgr.Paused)
         {
-            doorTransform.localPosition = Vector3.Lerp(closedState, openState, speedCurve.Evaluate(_currentProgress));
-        }
-        else if (_isDoorOpen && (doorCurrentX <= openState.x))
-        {
-            doorAnimationActive = false;
-        }
-        else if (!_isDoorOpen && (doorCurrentX < closedState.x))
-        {
-            doorTransform.localPosition = Vector3.Lerp(openState, closedState, speedCurve.Evaluate(_currentProgress));
-        }
-        else if (!_isDoorOpen && (doorCurrentX >= closedState.x))
-        {
-            doorAnimationActive = false;
+            _currentProgress += AnimationSpeed;
+            float doorCurrentX = doorTransform.localPosition.x;
+            if (_isDoorOpen && (doorCurrentX > openState.x))
+            {
+                doorTransform.localPosition = Vector3.Lerp(closedState, openState, speedCurve.Evaluate(_currentProgress));
+            }
+            else if (_isDoorOpen && (doorCurrentX <= openState.x))
+            {
+                doorAnimationActive = false;
+            }
+            else if (!_isDoorOpen && (doorCurrentX < closedState.x))
+            {
+                doorTransform.localPosition = Vector3.Lerp(openState, closedState, speedCurve.Evaluate(_currentProgress));
+            }
+            else if (!_isDoorOpen && (doorCurrentX >= closedState.x))
+            {
+                doorAnimationActive = false;
+            }
         }
     }
 
@@ -61,9 +64,9 @@ public class OpenDoor : MonoBehaviour
             {
                 closeDoorAudio.Invoke("");
             }
-            else 
+            else
             {
-                openDoorAudio.Invoke(""); 
+                openDoorAudio.Invoke("");
             }
             doorAnimationActive = true;
             _isDoorOpen = !_isDoorOpen;

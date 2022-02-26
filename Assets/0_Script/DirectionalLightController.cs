@@ -18,6 +18,7 @@ public class DirectionalLightController : MonoBehaviour
     private float _standardIntensity;
 
     Tween _intensityLooper;
+    Tween _colorTween;
 
     public void OnEnable()
     {
@@ -37,15 +38,27 @@ public class DirectionalLightController : MonoBehaviour
     public void OnAlarmStart(IMessage rMessage)
     {
         _standardIntensity = _lightRef.intensity;
-        _lightRef.DOColor(AlarmColor, 1);
+        _colorTween = _lightRef.DOColor(AlarmColor, 1);
         _intensityLooper = _lightRef.DOIntensity(_lowIntensityOnAlarm, 0.5f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
     [Button("StopAlarm")]
     public void OnAlarmStop(IMessage rMessage)
     {
-        _lightRef.DOColor(_neutralColor, 1);
+        _colorTween = _lightRef.DOColor(_neutralColor, 1);
         _intensityLooper.Kill();
         _lightRef.DOIntensity(_standardIntensity, 1);
     }
-}
+
+    private void OnDestroy()
+    {
+        if(_intensityLooper != null)
+        {
+            _intensityLooper.Kill();
+        }
+        if (_colorTween != null)
+        {
+            _colorTween.Kill();
+        }
+        }
+    }
