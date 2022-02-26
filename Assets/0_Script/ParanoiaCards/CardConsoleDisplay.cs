@@ -48,21 +48,21 @@ public class CardConsoleDisplay : SerializedMonoBehaviour
     {
         CardDeck deckA = new CardDeck(_cardListA);
         CardDeck deckB = new CardDeck(_cardListB);
-        Debug.Log($"DeckA: {deckA}");
-        Debug.Log($"DeckB: {deckB}");
-        Debug.Log($"DeckA + DeckB: {deckA + deckB}");
-        Debug.Log($"DeckA - DeckB: {deckA - deckB}");
-        Debug.Log($"DeckA + CardX: {deckA + cardX}");
-        Debug.Log($"DeckA - CardX: {deckA - cardX}");
-        Debug.Log($"DeckA: {deckA}");
-        Debug.Log($"DeckA * {multiplier}: {deckA * multiplier}");
-        Debug.Log($"DeckA.Shuffle(): {deckA.Shuffle()}");
+        Debug.Log($"Cards: DeckA: {deckA}");
+        Debug.Log($"Cards: DeckB: {deckB}");
+        Debug.Log($"Cards: DeckA + DeckB: {deckA + deckB}");
+        Debug.Log($"Cards: DeckA - DeckB: {deckA - deckB}");
+        Debug.Log($"Cards: DeckA + CardX: {deckA + cardX}");
+        Debug.Log($"Cards: DeckA - CardX: {deckA - cardX}");
+        Debug.Log($"Cards: DeckA: {deckA}");
+        Debug.Log($"Cards: DeckA * {multiplier}: {deckA * multiplier}");
+        Debug.Log($"Cards: DeckA.Shuffle(): {deckA.Shuffle()}");
         CardDeck deckC = deckA.Shuffle() + deckB.Shuffle();
-        Debug.Log($"DeckC: {deckC}");
-        Debug.Log($"Draw card from C: {deckC.DrawCard()}");
-        Debug.Log($"Draw 3 cards from C: {deckC.DrawCards(3)}");
-        Debug.Log($"DeckC: {deckC}");
-        Debug.Log($"Remove all CantWalkRed: {deckC.RemoveAllCardsOfType<CantWalkRedCard>()}");
+        Debug.Log($"Cards: DeckC: {deckC}");
+        Debug.Log($"Cards: Draw card from C: {deckC.DrawCard()}");
+        Debug.Log($"Cards: Draw 3 cards from C: {deckC.DrawCards(3)}");
+        Debug.Log($"Cards: DeckC: {deckC}");
+        Debug.Log($"Cards: Remove all CantWalkRed: {deckC.RemoveAllCardsOfType<CantWalkRedCard>()}");
 
     }
 

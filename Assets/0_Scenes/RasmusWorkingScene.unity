@@ -1157,6 +1157,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_green
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1166,6 +1190,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_red
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1175,6 +1223,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_blue
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1184,6 +1256,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_blue
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1205,6 +1301,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_green
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1214,6 +1334,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_green
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1223,6 +1367,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_blue
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1238,6 +1406,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_blue
+    - Name: _name
+      Entry: 6
+      Data: 
+    - Name: _description
+      Entry: 6
+      Data: 
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2133,6 +2325,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 938e0f1211c52a046ae2507a828a627e, type: 3}
+--- !u!1001 &2590920145592398742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 372.10205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 251.31822
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.610811
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563945591567660326, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379699333508307186, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
+      propertyPath: m_Name
+      value: LevelStartMessenger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16cf83406b04ceb448e8ff81199b1f03, type: 3}
 --- !u!1001 &3636903584620559629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2190,6 +2439,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1881df7499676974386231b9dce655c3, type: 3}
+--- !u!1001 &3830152081225900380
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3623704391484833597, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 372.10205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 251.31822
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.610811
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155720880150465163, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00e0e3793ef3b1f4c8b9602953bbdc4f, type: 3}
 --- !u!1001 &6097739678420528104
 PrefabInstance:
   m_ObjectHideFlags: 0
