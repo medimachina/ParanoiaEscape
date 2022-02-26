@@ -37,7 +37,7 @@ public class CardDisplayBig : SerializedMonoBehaviour
     [Button("Update from card")]
     public void UpdateUiFromCard()
     {
-        Debug.Log($"Name: \"{_card.Name}\", Descr: \"{_card.Description}\"");
+        Debug.Log($"Cards: Name: \"{_card.Name}\", Descr: \"{_card.Description}\"");
         _nameText.text = _card.Name;
         _descriptionText.text = _card.Description;
         _nameText.color = _card.Color;

@@ -8,6 +8,9 @@
     private const string _alarmStarted = "ALARM_STARTED";
     private const string _alarmStopped = "ALARM_STOPPED";
     private const string _levelStarted = "LEVEL_STARTED";
+    private const string _startMenuMusic = "START_MENU_MUSIC";
+    private const string _startTutorial = "START_TUTORIAL";
+
 
     public static string LostGame => _lostGame;
     public static string WonGame => _wonGame;
@@ -17,4 +20,6 @@
     public static string AlarmStarted => _alarmStarted;
     public static string AlarmStopped => _alarmStopped;
     public static string LevelStarted => _levelStarted;
+    public static string StartMenuMusic => _startMenuMusic;
+    public static string StartTutorial => _startTutorial;
 }

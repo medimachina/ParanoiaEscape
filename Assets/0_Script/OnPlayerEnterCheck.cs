@@ -23,7 +23,7 @@ public class OnPlayerEnterCheck : MonoBehaviour
 
     private void Update()
     {
-        if (_playerIsNear && !EnemyIsNear && Input.GetKeyDown(KeyCode.E))
+        if (_playerIsNear && !EnemyIsNear && Input.GetButtonDown("Submit"))
         {
             openDoor.ToggleDoor();
         }
