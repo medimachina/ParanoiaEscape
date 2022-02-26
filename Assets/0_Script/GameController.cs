@@ -22,6 +22,8 @@ public class GameController : SingletonBase<GameController>
         MessageDispatcher.AddListener(Msg.RestartLevel, RestartLevel);
         MessageDispatcher.AddListener(Msg.NextLevel, NextLevel);
         MessageDispatcher.AddListener(Msg.StartTutorial, StartTutorial);
+        MessageDispatcher.AddListener(Msg.RestartGame, RestartGame);
+        MessageDispatcher.AddListener(Msg.WonGame, OnLevelWon);
     }
 
     public void OnDisable()
@@ -29,6 +31,8 @@ public class GameController : SingletonBase<GameController>
         MessageDispatcher.RemoveListener(Msg.RestartLevel, RestartLevel);
         MessageDispatcher.RemoveListener(Msg.NextLevel, NextLevel);
         MessageDispatcher.RemoveListener(Msg.StartTutorial, StartTutorial);
+        MessageDispatcher.RemoveListener(Msg.RestartGame, RestartGame);
+        MessageDispatcher.RemoveListener(Msg.WonGame, OnLevelWon);
     }
 
     public void RestartLevel(IMessage rMessage)
@@ -39,20 +43,36 @@ public class GameController : SingletonBase<GameController>
 
     public void NextLevel(IMessage rMessage)
     {
-        _currentLevel++;
-        if (_currentLevel > _levelCount)
-        {
-            SceneManager.LoadScene("FinishedGame");
-        }
-        else
-        {
-            SceneManager.LoadScene("GameLevel");
-        }
+        SceneManager.LoadScene("GameLevel");
     }
 
     private void StartTutorial(IMessage rMessage)
     {
         SceneManager.LoadScene("Tutorial");
+    }
+
+    private void RestartGame(IMessage rMessage)
+    {
+        ResetForNewGame();
+        SceneManager.LoadScene("GameLevel");
+    }
+
+    private void OnLevelWon(IMessage rMessage)
+    {
+        _currentLevel++;
+        if (_currentLevel > _levelCount)
+        {
+            MessageDispatcher.SendMessage(Msg.ShowFinishedGameMenu);
+        }
+        else
+        {
+            MessageDispatcher.SendMessage(Msg.ShowFinishedLevelMenu);
+        }
+    }
+
+    private void ResetForNewGame()
+    {
+        _currentLevel = 0;
     }
 
 }

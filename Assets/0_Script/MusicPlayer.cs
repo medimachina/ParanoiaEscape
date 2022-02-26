@@ -64,8 +64,6 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
         MessageDispatcher.AddListener(Msg.LostGame, PlayMenuMusic);
         MessageDispatcher.AddListener(Msg.LevelStarted, OnLevelStarted);
         MessageDispatcher.AddListener(Msg.StartMenuMusic, PlayMenuMusic);
-        Debug.Log($"Music: {name} Registering message {Msg.LevelStarted}");
-
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -83,13 +81,11 @@ public class MusicPlayer : SingletonBase<MusicPlayer>
         MessageDispatcher.RemoveListener(Msg.LostGame, PlayMenuMusic);
         MessageDispatcher.RemoveListener(Msg.LevelStarted, OnLevelStarted);
         MessageDispatcher.RemoveListener(Msg.StartMenuMusic, PlayMenuMusic);
-        Debug.Log($"Music: {name} Unregistering message {Msg.LevelStarted}");
     }
 
     [Button("Level Started")]
     private void OnLevelStarted(IMessage rMessage)
     {
-        Debug.Log("On level started!");
         FadeToPlayer(_defaultPlayer);
     }
 

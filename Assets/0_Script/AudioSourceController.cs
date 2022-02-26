@@ -45,18 +45,14 @@ public class AudioSourceController
         _source.clip = playQueue.Dequeue();
         _source.Play();
 
-        Debug.Log($"Music: Playing clip {_source.clip}. {playQueue.Count} left in queue");
-
         if (_source.clip == MainClip && playQueue.Count == 0)
         {
-            Debug.Log($"Music: {_source.clip} is main clip and playQueue count = {playQueue.Count} => Setting to loop");
             _source.loop = true;
             return;
         }
 
         if (playQueue.Count > 0)
         {
-            Debug.Log($"Cout {playQueue.Count} > 0. Starting coroutine with playing next at end.");
             _waitingToEnd = _parentBehavour.StartCoroutine(WaitForClipToEndCo(_source, () =>
             {
                 PlayQueue(playQueue);
@@ -64,7 +60,6 @@ public class AudioSourceController
         }
         else
         {
-            Debug.Log($"Cout {playQueue.Count} == 0. Starting coroutine with setting _isPlaying to false at end.");
             _waitingToEnd = _parentBehavour.StartCoroutine(WaitForClipToEndCo(_source, () =>
             {
                 _isPlaying = false;
@@ -77,7 +72,6 @@ public class AudioSourceController
         if (!_isPlaying)
         {
             Queue<AudioClip> queue = GenerateQueue();
-            Debug.Log($"Music: Creating a queue with {queue.Count} tracks");
             PlayQueue(queue);
         }
     }

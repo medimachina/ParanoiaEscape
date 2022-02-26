@@ -26,21 +26,44 @@ public class UiPanel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _buttonText;
 
+    private Tween _currentTween;
 
     [Button("Show")]
     public void Show()
     {
-        _canvasGroup.alpha = 0;
-        _canvasGroup.DOFade(1, 1);
+        if (_currentTween != null)
+        {
+            _currentTween.Kill();
+        }
+        if (_canvasGroup.gameObject.activeSelf == true)
+        {
+            _canvasGroup.alpha = 0;
+            _currentTween = _canvasGroup.DOFade(1, 1);
+        }
     }
 
     [Button("Hide")]
     public void Hide()
     {
-        _canvasGroup.alpha = 0;
-        _canvasGroup.DOFade(0, 1).onComplete = () =>
+        if (_currentTween != null)
         {
-            gameObject.SetActive(false);
-        };
+            _currentTween.Kill();
+        }
+        if (_canvasGroup.gameObject.activeSelf == true)
+        {
+            _canvasGroup.alpha = 0;
+            _currentTween = _canvasGroup.DOFade(0, 1).OnComplete(() =>
+            {
+                gameObject.SetActive(false);
+            });
+        }
+    }
+
+    public void OnDestroy()
+    {
+        if (_currentTween != null)
+        {
+            _currentTween.Kill();
+        }
     }
 }

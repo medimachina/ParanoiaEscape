@@ -8,7 +8,8 @@ using System;
 public class InGameMenu : MonoBehaviour
 {
     public UiPanel LostGamePanel;
-    public UiPanel WonGamePanel;
+    public UiPanel WonLevelPanel;
+    public UiPanel FinishedGamePanel;
 
     private List<UiPanel> _allPanels;
 
@@ -16,19 +17,22 @@ public class InGameMenu : MonoBehaviour
     {
         _allPanels = new List<UiPanel>();
         _allPanels.Add(LostGamePanel);
-        _allPanels.Add(WonGamePanel);
+        _allPanels.Add(WonLevelPanel);
+        _allPanels.Add(FinishedGamePanel);
     }
 
     private void OnEnable()
     {
-        MessageDispatcher.AddListener(Msg.WonGame, OnGameWon);
+        MessageDispatcher.AddListener(Msg.ShowFinishedLevelMenu, OnLevelWon);
         MessageDispatcher.AddListener(Msg.LostGame, OnGameLost);
+        MessageDispatcher.AddListener(Msg.ShowFinishedGameMenu, OnGameFinished);
     }
 
     private void OnDisable()
     {
-        MessageDispatcher.RemoveListener(Msg.WonGame, OnGameWon);
+        MessageDispatcher.RemoveListener(Msg.ShowFinishedLevelMenu, OnLevelWon);
         MessageDispatcher.RemoveListener(Msg.LostGame, OnGameLost);
+        MessageDispatcher.RemoveListener(Msg.ShowFinishedGameMenu, OnGameFinished);
     }
 
     [Button("Try Lost")]
@@ -38,9 +42,15 @@ public class InGameMenu : MonoBehaviour
     }
 
     [Button("Try Won")]
-    private void OnGameWon(IMessage rMessage)
+    private void OnLevelWon(IMessage rMessage)
     {
-        ActivatePanel(WonGamePanel);
+        ActivatePanel(WonLevelPanel);
+    }
+
+    [Button("Try Finished")]
+    private void OnGameFinished(IMessage rMessage)
+    {
+        ActivatePanel(FinishedGamePanel);
     }
 
     private void ActivatePanel(UiPanel panel)
@@ -59,3 +69,4 @@ public class InGameMenu : MonoBehaviour
     }
 
 }
+

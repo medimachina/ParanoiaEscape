@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/MainMenu.unity
     guid: b00ff1964f78dfa47a0181e1e7e0a1d1
-  - enabled: 0
-    path: Assets/0_Scenes/PerWorkingScene.unity
-    guid: b44750e7d55d8ad40a3b83023f9464a8
-  - enabled: 0
-    path: Assets/0_Scenes/RasmusWorkingScene.unity
-    guid: e8fe7ae8230026b4aace5473ecf37fd7
   - enabled: 1
     path: Assets/0_Scenes/Tutorial.unity
     guid: 18d0a16b4b5937840b1bb0258a54cb13
