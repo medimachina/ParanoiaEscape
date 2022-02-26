@@ -8,6 +8,13 @@ public class CardDeck
     [SerializeField]
     private List<Card> _cardList;
 
+    public int Count => _cardList.Count;
+
+    public Card Get(int index)
+    {
+        return _cardList[index];
+    }
+
     public List<Card> CardList
     {
         get => _cardList;

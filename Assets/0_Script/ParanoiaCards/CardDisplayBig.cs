@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 
 public class CardDisplayBig : SerializedMonoBehaviour
 {
@@ -14,9 +15,18 @@ public class CardDisplayBig : SerializedMonoBehaviour
     [SerializeField]
     private Image _background;
     [SerializeField]
+    private RectTransform _baseRectTransform;
+    [SerializeField]
     private CanvasGroup _cardLayoutGroup;
     [SerializeField]
     private Card _card;
+
+    private TransformResetter transformResetter;
+
+    private void Awake()
+    {
+        transformResetter = new TransformResetter(_baseRectTransform);
+    }
 
     public void SetCard(Card newCard)
     {
@@ -31,8 +41,14 @@ public class CardDisplayBig : SerializedMonoBehaviour
         _nameText.text = _card.Name;
         _descriptionText.text = _card.Description;
         _nameText.color = _card.Color;
-        //_nameText.text = "Test";
-        //_descriptionText.text = "Bla blabla bla. Bla blabla bla. Bla blabla bla.";
-        //_nameText.color = ColorPalette.BlueDark;
+    }
+
+    [Button("Appear")]
+    public void Appear()
+    {
+        transformResetter.Reset(_baseRectTransform);
+        _baseRectTransform.DOScale(0, 1).From();
+        _baseRectTransform.DORotate(new Vector3(0,0,90), 1).From();
+        _baseRectTransform.DOLocalMove(new Vector3(-1000, 100, 0), 1).From();
     }
 }

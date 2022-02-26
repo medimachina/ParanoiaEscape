@@ -259,13 +259,37 @@ MonoBehaviour:
       Data: 0|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 1|CantWalkGreenCard, Assembly-CSharp
+      Data: 1|CantWalkBlueCard, Assembly-CSharp
     - Name: _identifier
       Entry: 1
-      Data: cant_walk_green
+      Data: cant_walk_blue
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Blue!
+    - Name: _description
+      Entry: 1
+      Data: Blue floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.141176477
+    - Name: 
+      Entry: 4
+      Data: 0.239215687
+    - Name: 
+      Entry: 4
+      Data: 0.360784322
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -275,6 +299,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_green
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Green!
+    - Name: _description
+      Entry: 1
+      Data: Green floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.243137255
+    - Name: 
+      Entry: 4
+      Data: 0.4117647
+    - Name: 
+      Entry: 4
+      Data: 0.345098048
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -284,33 +332,30 @@ MonoBehaviour:
     - Name: _identifier
       Entry: 1
       Data: cant_walk_red
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Red!
+    - Name: _description
+      Entry: 1
+      Data: Red floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.6901961
+    - Name: 
+      Entry: 4
+      Data: 0.227450982
+    - Name: 
+      Entry: 4
+      Data: 0.282352954
+    - Name: 
+      Entry: 4
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|CantWalkRedCard, Assembly-CSharp
-    - Name: _identifier
-      Entry: 1
-      Data: cant_walk_red
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|CantWalkBlueCard, Assembly-CSharp
-    - Name: _identifier
-      Entry: 1
-      Data: cant_walk_blue
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 6|CantWalkBlueCard, Assembly-CSharp
-    - Name: _identifier
-      Entry: 1
-      Data: cant_walk_blue
     - Name: 
       Entry: 8
       Data: 
@@ -322,25 +367,73 @@ MonoBehaviour:
       Data: 
     - Name: _cardListB
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[Card, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 8|CantWalkGreenCard, Assembly-CSharp
+      Data: 5|CantWalkGreenCard, Assembly-CSharp
     - Name: _identifier
       Entry: 1
       Data: cant_walk_green
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Green!
+    - Name: _description
+      Entry: 1
+      Data: Green floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.243137255
+    - Name: 
+      Entry: 4
+      Data: 0.4117647
+    - Name: 
+      Entry: 4
+      Data: 0.345098048
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|CantWalkGreenCard, Assembly-CSharp
+      Data: 6|CantWalkRedCard, Assembly-CSharp
     - Name: _identifier
       Entry: 1
-      Data: cant_walk_green
+      Data: cant_walk_red
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Red!
+    - Name: _description
+      Entry: 1
+      Data: Red floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.6901961
+    - Name: 
+      Entry: 4
+      Data: 0.227450982
+    - Name: 
+      Entry: 4
+      Data: 0.282352954
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -352,10 +445,34 @@ MonoBehaviour:
       Data: 
     - Name: cardX
       Entry: 7
-      Data: 10|CantWalkGreenCard, Assembly-CSharp
+      Data: 7|CantWalkBlueCard, Assembly-CSharp
     - Name: _identifier
       Entry: 1
-      Data: cant_walk_green
+      Data: cant_walk_blue
+    - Name: _name
+      Entry: 1
+      Data: Can't Walk on Blue!
+    - Name: _description
+      Entry: 1
+      Data: Blue floor has a forcefield. You can't walk on it.
+    - Name: _color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.141176477
+    - Name: 
+      Entry: 4
+      Data: 0.239215687
+    - Name: 
+      Entry: 4
+      Data: 0.360784322
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -552,6 +669,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3417188366933973965, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"_card","value":{"$id":0,"$type":"CantWalkRedCard, Assembly-CSharp","_identifier":"cant_walk_red","_name":"Can''t
+        Walk on Red!","_description":"Red floor has a forcefield. You can''t walk
+        on it.","_color":{"$type":"UnityEngine.Color, UnityEngine.CoreModule",0.6901961,0.227450982,0.282352954,1}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2388,6 +2523,24 @@ PrefabInstance:
     - target: {fileID: 3417188366933973965, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: _baseRectTransform
+      value: 
+      objectReference: {fileID: 1952753548}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481478264202003496, guid: b781ed0b2832b21428781b090f89f65d, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"_card","value":{"$id":0,"$type":"CantWalkBlueCard, Assembly-CSharp","_identifier":"cant_walk_blue","_name":"Can''t
+        Walk on Blue!","_description":"Blue floor has a forcefield. You can''t walk
+        on it.","_color":{"$type":"UnityEngine.Color, UnityEngine.CoreModule",0.141176477,0.239215687,0.360784322,1}}'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b781ed0b2832b21428781b090f89f65d, type: 3}

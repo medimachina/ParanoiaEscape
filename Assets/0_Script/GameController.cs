@@ -4,8 +4,13 @@ using UnityEngine;
 using com.ootii.Messages;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameController : SingletonBase<GameController>
 {
+    [SerializeField]
+    private int _currentLevel;
+
+    public int CurrentLevel => _currentLevel;
+
     public void OnEnable()
     {
         MessageDispatcher.AddListener(Msg.RestartLevel, RestartLevel);
