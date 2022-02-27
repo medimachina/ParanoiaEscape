@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using DG.Tweening;
+using System;
 
 public class CardDisplayBig : SerializedMonoBehaviour
 {
@@ -19,9 +20,13 @@ public class CardDisplayBig : SerializedMonoBehaviour
     [SerializeField]
     private CanvasGroup _cardLayoutGroup;
     [SerializeField]
+    private Button _button;
+    [SerializeField]
     private Card _card;
 
     private TransformResetter transformResetter;
+
+    public Card Card => _card;
 
     private void Awake()
     {
@@ -50,5 +55,23 @@ public class CardDisplayBig : SerializedMonoBehaviour
         _baseRectTransform.DOScale(0, 1).From();
         _baseRectTransform.DORotate(new Vector3(0,0,90), 1).From();
         _baseRectTransform.DOLocalMove(new Vector3(-1000, 100, 0), 1).From();
+        _button.interactable = true;
     }
+
+    [Button("Disappear")]
+    public void Disppear()
+    {
+        _baseRectTransform.DOScale(0, 1);
+        _baseRectTransform.DORotate(new Vector3(0, 0, 90), 1).From();
+        _baseRectTransform.DOLocalMove(new Vector3(1000, -100, 0), 1);
+        _button.interactable = false;
+    }
+
+    internal void MoveTo(Vector3 position)
+    {
+        _baseRectTransform.DOScale(0, 1);
+        _baseRectTransform.DORotate(new Vector3(0, 0, 90), 1).From();
+        _baseRectTransform.DOMove(position, 1);
+    }
+
 }

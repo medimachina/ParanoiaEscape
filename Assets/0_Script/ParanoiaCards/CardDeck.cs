@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 [System.Serializable]
 public class CardDeck
@@ -51,6 +52,11 @@ public class CardDeck
         List<Card> mergedCards = ShallowCopyList(a.CardList);
         mergedCards.AddRange(ShallowCopyList(b.CardList));
         return new CardDeck(mergedCards);
+    }
+
+    public void Add(Card card)
+    {
+        _cardList.Add(card);
     }
 
     public static CardDeck operator +(CardDeck a, Card b)

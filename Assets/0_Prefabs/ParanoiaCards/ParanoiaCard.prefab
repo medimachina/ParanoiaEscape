@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9182369771195532475}
   - component: {fileID: 2998205350356593051}
   - component: {fileID: 5481478264202003496}
+  - component: {fileID: 3374117744167777690}
   m_Layer: 5
   m_Name: ParanoiaCard
   m_TagString: Untagged
@@ -116,7 +117,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.8962264, g: 0.89112985, b: 0.8074493, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -169,6 +170,9 @@ MonoBehaviour:
     - Name: _description
       Entry: 1
       Data: Blue floor has a forcefield. You can't walk on it.
+    - Name: _shortDescription
+      Entry: 6
+      Data: 
     - Name: _color
       Entry: 7
       Data: UnityEngine.Color, UnityEngine.CoreModule
@@ -193,8 +197,23 @@ MonoBehaviour:
   _nameText: {fileID: 4540314953813933626}
   _descriptionText: {fileID: 6717141042563543720}
   _background: {fileID: 9182369771195532475}
-  _baseRectTransform: {fileID: 0}
+  _baseRectTransform: {fileID: 3417188366933973965}
   _cardLayoutGroup: {fileID: 4203185425230600448}
+--- !u!114 &3374117744167777690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703860204964786620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.16470589}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6632122119514392316
 GameObject:
   m_ObjectHideFlags: 0

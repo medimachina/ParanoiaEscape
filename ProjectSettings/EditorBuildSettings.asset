@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/GameLevel.unity
     guid: 3af8a48ce50ff184689e49ca84b99275
+  - enabled: 1
+    path: Assets/0_Scenes/SelectParanoias.unity
+    guid: 2fcb5a96eab13a64299634369778297c
   m_configObjects: {}
