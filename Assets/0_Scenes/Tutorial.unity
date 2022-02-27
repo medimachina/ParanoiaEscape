@@ -5161,7 +5161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442539523185470618, guid: ce62922596dd7d842ab96d9bb4ef7ddb, type: 3}
       propertyPath: m_text
-      value: If a guard sees you, he sounds the alarm.
+      value: If a guard sees you, he sounds the alarm
       objectReference: {fileID: 0}
     - target: {fileID: 5442539523224696119, guid: ce62922596dd7d842ab96d9bb4ef7ddb, type: 3}
       propertyPath: m_IsActive
@@ -5511,7 +5511,7 @@ PrefabInstance:
 
         EXIT
 
-        But you canonly enter when the alarm is off.'
+        But you can only enter when the alarm is off'
       objectReference: {fileID: 0}
     - target: {fileID: 5442539523224696119, guid: ce62922596dd7d842ab96d9bb4ef7ddb, type: 3}
       propertyPath: m_IsActive
